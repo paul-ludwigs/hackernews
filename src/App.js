@@ -14,7 +14,7 @@ function App() {
         <h1>Hackernews</h1>
       </header>
       <Search setSearchValue={setSearchValue} />
-      <Articles searchValue={searchValue} setArticles={setArticles}/>
+      <Articles searchValue={searchValue} />
       
 
     </div>

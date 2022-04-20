@@ -30,6 +30,7 @@ const Articles = ({ searchValue }) => {
           });*/
       }
       useEffect(()=>{
+        setArticles(null);
         setTimeout(()=>{
             getData();
         }, 1000)
