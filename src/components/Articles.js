@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { CircularProgress } from '@mui/material';
 
 const Articles = ({ searchValue }) => {
 
@@ -45,7 +46,8 @@ const Articles = ({ searchValue }) => {
               <a href={article.url}><h2>{article.title}</h2></a>
             </div> ) : null
           ))
-        : "Loading....."}
+        : <CircularProgress />
+    }
     </div>
   )
 }
