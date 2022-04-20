@@ -40,7 +40,8 @@ const Articles = ({ searchValue }) => {
     <div key={searchValue}>
         <h2>Search results for: {searchValue}</h2>
         {articles
-        ? articles.map((article) => (
+        ? articles.length == 0 ? <div><p>No results :(</p></div>
+        : articles.map((article) => (
             article.url ? (
             <div key={article.objectID}>
               <a href={article.url}><h2>{article.title}</h2></a>
