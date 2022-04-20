@@ -37,17 +37,21 @@ const Articles = ({ searchValue }) => {
         }, 1000)
       },[searchValue])
   return (
-    <div key={searchValue}>
+    <div id="mainDiv">
         <h2>Search results for: {searchValue}</h2>
         {articles
-        ? articles.length == 0 ? <div><p>No results :(</p></div>
+        ? articles.length == 0 ? <div><p id='no-results'>No results :(</p></div>
         : articles.map((article) => (
             article.url ? (
-            <div key={article.objectID}>
-              <a href={article.url}><h2>{article.title}</h2></a>
-            </div> ) : null
+            <a href={article.url} key={article.objectID} className="article">
+                
+              <h3>{article.title}</h3>
+            </a> 
+            ) : null
           ))
-        : <CircularProgress />
+        : <div id="loading">
+            <CircularProgress id='circle' size="8rem"/>
+        </div>
     }
     </div>
   )
