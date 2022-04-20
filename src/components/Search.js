@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 const Search = ({ setSearchValue }) => {
 
     useEffect(()=>{
+        setTimeout(()=>{
+
         document.getElementById('searchbar').addEventListener('submit', (event) => {
             event.preventDefault();
             const searchValue = document.getElementById('inputField').value;
@@ -12,6 +14,7 @@ const Search = ({ setSearchValue }) => {
             setSearchValue(searchValue);
         })
         console.log('fire once');
+    }, 1000)
     }, [])
 
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { CircularProgress } from '@mui/material';
 
 const Articles = ({ searchValue }) => {
 
@@ -30,18 +31,23 @@ const Articles = ({ searchValue }) => {
           });*/
       }
       useEffect(()=>{
-        getData()
+        setArticles(null);
+        setTimeout(()=>{
+            getData();
+        }, 1000)
       },[searchValue])
   return (
     <div key={searchValue}>
         <h2>Search results for: {searchValue}</h2>
         {articles
         ? articles.map((article) => (
+            article.url ? (
             <div key={article.objectID}>
               <a href={article.url}><h2>{article.title}</h2></a>
-            </div>
+            </div> ) : null
           ))
-        : "Loading....."}
+        : <CircularProgress />
+    }
     </div>
   )
 }
