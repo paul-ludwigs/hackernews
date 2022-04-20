@@ -13,7 +13,7 @@ const Articles = ({ searchValue }) => {
         .then((response) => {
             setArticles(response.data.hits); 
             console.log(response.data.hits)})
-        .catch((err) => console.log(err));
+        .catch((err) => alert("Error fetching the API"));
         /*fetch('hackernews.json'
         ,{
           headers : { 
