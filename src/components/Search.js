@@ -1,17 +1,21 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 
-const Search = ({ setSearchValue }) => {
+const Search = ({ setSearchValue, setArticles }) => {
 
     useEffect(()=>{
+        setTimeout(()=>{
+
         document.getElementById('searchbar').addEventListener('submit', (event) => {
             event.preventDefault();
+            setArticles(null);
             const searchValue = document.getElementById('inputField').value;
             console.log(searchValue);
             document.getElementById('inputField').value = "";                    
             setSearchValue(searchValue);
         })
         console.log('fire once');
+    }, 1000)
     }, [])
 
 

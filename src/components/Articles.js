@@ -30,7 +30,9 @@ const Articles = ({ searchValue }) => {
           });*/
       }
       useEffect(()=>{
-        getData()
+        setTimeout(()=>{
+            getData();
+        }, 1000)
       },[searchValue])
   return (
     <div key={searchValue}>
