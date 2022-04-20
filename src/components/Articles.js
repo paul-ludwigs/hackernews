@@ -1,12 +1,19 @@
 import React from 'react';
 import { useEffect, useState } from "react";
+import axios from "axios";
 
-const Articles = () => {
+const Articles = ({ searchValue }) => {
 
     const [articles, setArticles] = useState(null);
 
     const getData=()=>{
-        fetch('hackernews.json'
+        axios
+        .get(`https://hn.algolia.com/api/v1/search?query=${searchValue}`)
+        .then((response) => {
+            setArticles(response.data.hits); 
+            console.log(response.data.hits)})
+        .catch((err) => console.log(err));
+        /*fetch('hackernews.json'
         ,{
           headers : { 
             'Content-Type': 'application/json',
@@ -20,13 +27,14 @@ const Articles = () => {
           .then(function(myJson) {
             console.log(myJson);
             setArticles(myJson.hits);
-          });
+          });*/
       }
       useEffect(()=>{
         getData()
-      },[])
+      },[searchValue])
   return (
-    <div>
+    <div key={searchValue}>
+        <h2>Search results for: {searchValue}</h2>
         {articles
         ? articles.map((article) => (
             <div key={article.objectID}>
