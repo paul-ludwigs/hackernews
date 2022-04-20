@@ -6,7 +6,7 @@ import Search from './components/Search';
 
 function App() {
 
-  const [searchValue, setSearchValue] = useState();
+  const [searchValue, setSearchValue] = useState("new");
 
   return (
     <div className="App">
