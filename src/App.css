@@ -19,12 +19,16 @@ h2 {
 }
 h3 {
   margin-top: .5em;
+  font-size: 1.2em;
 }
 
 a {
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
 
+}
+a:hover {
+  color: black;
 }
 
 #searchbar {

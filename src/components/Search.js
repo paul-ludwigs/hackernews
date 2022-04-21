@@ -25,7 +25,6 @@ const Search = ({ setSearchValue }) => {
             document.getElementById('outlined-basic').value = null;                    
             setSearchValue(searchValue);
         })
-        console.log('fire once');
     }, 1000)
     }, [])
 
