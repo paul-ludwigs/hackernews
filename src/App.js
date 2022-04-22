@@ -17,7 +17,7 @@ function App() {
   useEffect(()=>{
     const getData= async ()=>{
       setLoading(true);
-      const res = await axios.get(`http://hn.algolia.com/api/v1/search?query=${searchValue}&hitsPerPage=100`);
+      const res = await axios.get(`https://hn.algolia.com/api/v1/search?query=${searchValue}&hitsPerPage=100`);
       setArticles(res.data.hits);
       setLoading(false);
     }
