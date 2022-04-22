@@ -12,7 +12,7 @@ const Pagination = ({ articlesPerPage, totalArticles, paginate }) => {
         <ul className='pagination justify-content-center'>
             {pageNumbers.map(number => (
                 <li key={number} className="page-sditem">
-                    <a onClick={() => paginate(number)} href='!#' className='page-link'>
+                    <a onClick={() => paginate(number)} href='#' className='page-link'>
                         {number}
                     </a>
                 </li>
