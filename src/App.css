@@ -100,3 +100,24 @@ a:hover {
   font-weight: bold;
   font-size: 2em;
 }
+
+.pagination {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+    z-index: 3;
+    color: white;
+    background-color: rgb(255,140,0);
+}
+
+.page-link {
+  color: rgb(255,140,0);
+  background-color: rgb(220, 220, 220);
+  border: none;
+
+}

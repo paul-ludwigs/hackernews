@@ -9,9 +9,9 @@ const Pagination = ({ articlesPerPage, totalArticles, paginate }) => {
   }
     return (
     <nav>
-        <ul className='pagination'>
+        <ul className='pagination justify-content-center'>
             {pageNumbers.map(number => (
-                <li key={number} className="page-item">
+                <li key={number} className="page-sditem">
                     <a onClick={() => paginate(number)} href='!#' className='page-link'>
                         {number}
                     </a>
